@@ -9,9 +9,6 @@ export class FindSerieCategoryController {
       where: {
         id,
       },
-      include: {
-        SerieCategory: true
-      }
     });
 
     return response.json(serieCategory);
