@@ -2,7 +2,7 @@ import express from "express";
 import { router } from "./routes";
 
 const app = express();
-const port = 4003 || process.env.PORT
+const port = process.env.PORT || 4003
 app.use(express.json());
 app.use(router);
 
