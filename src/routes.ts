@@ -1,4 +1,4 @@
-import { Router } from "express";
+import express, { application, Router } from "express";
 import { CreateCategoryController } from "./controller/categories/createCategoryController";
 import { DeleteCategoryController } from "./controller/categories/deleteCategoryController";
 import { FindAllCategoryController } from "./controller/categories/findAllCategoriesController";
@@ -14,7 +14,6 @@ import { DeleteSerieCategoryController } from "./controller/seriesCategories/del
 import { FindAllSerieCategoryController } from "./controller/seriesCategories/findAllSerieCategoriesController";
 import { FindSerieCategoryController } from "./controller/seriesCategories/findSerieCategoryController";
 import { UpdateSerieCategoryController } from "./controller/seriesCategories/updateSerieCategoryController";
-
 const router = Router();
 
 //Series
@@ -31,7 +30,6 @@ router.post("/series", createSerie.handle);
 router.put("/series/:id", updateSerie.handle);
 router.delete("/series/:id", deleteSerie.handle);
 
-
 //Categories
 const findAllCategory = new FindAllCategoryController();
 const findCategory = new FindCategoryController();
@@ -44,7 +42,6 @@ router.get("/category/:id", findCategory.handle);
 router.post("/category", createCategory.handle);
 router.put("/category/:id", updateCategory.handle);
 router.delete("/category/:id", deleteCategory.handle);
-
 
 //SeriesCategories
 
